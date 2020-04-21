@@ -6,12 +6,12 @@ import (
 
 // Add adds the two vectors.
 func (v Vec) Add(w Vec) Vec {
-	return Vec{X: v.X + w.Y, Y: v.Y + w.Y}
+	return Vec{X: v.X + w.X, Y: v.Y + w.Y}
 }
 
 // Sub subtracts w from v.
 func (v Vec) Sub(w Vec) Vec {
-	return Vec{X: v.X - w.Y, Y: v.Y - w.Y}
+	return Vec{X: v.X - w.X, Y: v.Y - w.Y}
 }
 
 // Neg returns -v.
