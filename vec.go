@@ -71,3 +71,13 @@ func (v Vec) Orth() (w Vec) {
 func (v Vec) Eq(w Vec, tol float32) bool {
 	return math32.Abs(v.X-w.X) <= tol && math32.Abs(v.Y-w.Y) <= tol
 }
+
+// IsZero checks if the vector is (0,0)
+func (v Vec) IsZero() bool {
+	return v.X == 0 && v.Y == 0
+}
+
+// Angle returns the angle of the vector (from x axis)
+func (v Vec) Angle() float32 {
+	return math32.Atan2(v.Y, v.X)
+}

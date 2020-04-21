@@ -1,6 +1,8 @@
 # v2d
 2D vector math library in golang.
 
+![Test](https://github.com/vron/v2d/workflows/Test/badge.svg)
+
 There exist several ones, but could not find one fitting my requirements of:
 
  * MIT license
