@@ -56,6 +56,10 @@ func (v Vec) Length() float32 {
 
 // Unit returns a unit vector in the same direction.
 func (v Vec) Unit() Vec {
+	// pre-scaling to not get underflow / overflow in
+	// the sqrt in .length
+	v = v.Scale(min(1/v.X, 1/v.Y))
+
 	return v.Scale(1.0 / v.Length())
 }
 
@@ -80,4 +84,11 @@ func (v Vec) IsZero() bool {
 // Angle returns the angle of the vector (from x axis)
 func (v Vec) Angle() float32 {
 	return math32.Atan2(v.Y, v.X)
+}
+
+func min(a, b float32) float32 {
+	if a < b {
+		return a
+	}
+	return b
 }
