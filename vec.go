@@ -58,7 +58,7 @@ func (v Vec) Length() float32 {
 func (v Vec) Unit() Vec {
 	// pre-scaling to not get underflow / overflow in
 	// the sqrt in .length
-	v = v.Scale(min(1/v.X, 1/v.Y))
+	v = v.Scale(min(math32.Abs(1/v.X), math32.Abs(1/v.Y)))
 
 	return v.Scale(1.0 / v.Length())
 }
